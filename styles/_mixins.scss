@@ -1,0 +1,13 @@
+/******************************************* All mixins used are stored here *****************************/
+
+@mixin flexCenter($direction) {
+    display: flex;
+    flex-direction: ($direction);
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin background {
+    background: rgb(2,0,36);
+    background: linear-gradient(120deg, rgba(2,0,36,1) 0%, rgba(153,72,2,1) 100%, rgba(0,212,255,1) 100%);
+}

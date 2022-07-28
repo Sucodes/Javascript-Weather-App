@@ -1,0 +1,155 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap"); /******************************************* All mixins used are stored here *****************************/ /****************** All variables are stored here *************************/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-family: "Playfair Display", serif;
+  font-size: 0.6rem;
+  color: #fff;
+}
+
+.container {
+  height: 100vh;
+  width: 100vw;
+}
+
+#display {
+  background-image: url(../images/weather1.png);
+  background-repeat: no-repeat;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px;
+}
+#display div {
+  margin: 10px;
+}
+
+#input {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(120deg, rgb(2, 0, 36) 0%, rgb(153, 72, 2) 100%, rgb(0, 212, 255) 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 50vh;
+  padding: 15px;
+}
+#input .search {
+  width: 100%;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+}
+#input .search input {
+  width: 80%;
+  height: 50px;
+  border: none;
+  color: #fff;
+  background: transparent;
+  border-bottom: 1px solid rgb(182, 182, 182);
+}
+#input .search input:hover {
+  border: none;
+  border-radius: 5px;
+  color: rgb(182, 182, 182);
+  background-color: #fff;
+  transition: 1s;
+  transform: scale(1);
+}
+#input .search input::-moz-placeholder {
+  color: rgb(182, 182, 182);
+  font-size: 0.6rem;
+}
+#input .search input:-ms-input-placeholder {
+  color: rgb(182, 182, 182);
+  font-size: 0.6rem;
+}
+#input .search input::placeholder {
+  color: rgb(182, 182, 182);
+  font-size: 0.6rem;
+}
+#input .search button {
+  height: 50px;
+  width: 20%;
+  border: none;
+  border-radius: 5px;
+  background-color: orange;
+  cursor: pointer;
+}
+#input .search button:hover {
+  background-color: #fff;
+}
+#input .search button:hover svg {
+  fill: orange;
+  transition: 0.8s;
+}
+#input .search button svg {
+  width: 20px;
+}
+#input hr {
+  width: 85%;
+  margin: 0px 20px;
+}
+#input .weather-details {
+  width: 100%;
+  margin-top: 20px;
+}
+#input .weather-details h4 {
+  text-align: center;
+}
+#input .weather-details .details {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px 5px;
+}
+#input .weather-details .details ul li {
+  margin: 15px 0px;
+  list-style: none;
+}
+
+/******************** Media Query styling begins here ***********************************/
+@media (min-width: 660px) {
+  .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  #display {
+    width: 40vw;
+    height: 80vh;
+  }
+  #input {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    width: 20vw;
+    height: 80vh;
+  }
+  #input .weather-details .details ul > li {
+    margin-top: 3rem;
+  }
+}
+/******************** Media Query styling ends here ***********************************//*# sourceMappingURL=style.css.map */

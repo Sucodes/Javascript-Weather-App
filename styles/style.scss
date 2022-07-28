@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+@import "_mixins.scss";
+@import "_variables.scss";
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 30px;
+    @include flexCenter(row);
+    font-family: 'Playfair Display', serif;
+    font-size: $fontSize;
+    color: $white;
+}
+
+.container {
+    height: 100vh;
+    width: 100vw;
+}
+
+#display {
+    background-image: url(../images/weather1.png);
+    background-repeat: no-repeat;
+    height: 50vh;
+    @include flexCenter(column);
+    justify-content: space-between;
+    padding: 50px;
+
+    div {
+        margin: 10px;
+    }
+}
+
+#input {
+    @include background;
+    @include flexCenter(column);
+    justify-content: space-evenly;
+    height: 50vh;
+    padding: 15px;
+    
+    .search {
+        width: 100%;
+        margin-bottom: 20px;
+        @include flexCenter(row);
+        justify-content: space-between;
+
+        input {
+            width: 80%;
+            height: 50px;
+            border: none;
+            color: $white;
+            background: $transparentColor;
+            border-bottom: 1px solid $grey;
+
+            &:hover {
+                border: none;
+                border-radius: 5px;
+                color: $grey;
+                background-color: $white;
+                transition: 1s;
+                transform: scale(1);
+            }
+
+            &::placeholder {
+                color: $grey;
+                font-size: $fontSize;
+            }
+        }
+
+        button {
+            height: 50px;
+            width: 20%;
+            border: none;
+            border-radius: 5px;
+            background-color: orange;
+            cursor: pointer;
+
+            &:hover {
+                background-color: #fff;
+
+                svg {
+                    fill: orange;
+                    transition: 0.8s;
+                }
+            }
+
+            svg {
+                width: 20px;
+            }
+        }
+    }
+
+    hr {
+        width: 85%;
+        margin: 0px 20px;
+    }
+
+    .weather-details {
+        width: 100%;
+        margin-top: 20px;
+
+        h4 {
+            text-align: center;
+        }
+        
+        .details {
+            @include flexCenter(row);
+            justify-content: space-between;
+            margin: 10px 5px;
+            
+            ul li {
+                margin: 15px 0px;
+                list-style: none;
+            }
+        }
+    }
+}
+
+/******************** Media Query styling begins here ***********************************/ 
+
+@media (min-width: 660px) {
+    .container {
+        @include flexCenter(row);
+    }
+
+    #display {
+        width: 40vw;
+        height: 80vh;
+    }
+
+    #input {
+        @include flexCenter(column);
+        justify-content: space-between;
+        padding: 10px;
+        width: 20vw;
+        height: 80vh;
+
+        .weather-details {
+
+            .details {
+                
+                ul > li {
+                    margin-top: 3rem;
+                }
+            }
+        }
+    }
+}
+
+/******************** Media Query styling ends here ***********************************/ 
