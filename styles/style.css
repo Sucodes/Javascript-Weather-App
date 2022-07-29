@@ -22,7 +22,6 @@ body {
 }
 
 #display {
-  background-image: url(../images/weather.png);
   background-repeat: no-repeat;
   -o-object-fit: cover;
      object-fit: cover;
