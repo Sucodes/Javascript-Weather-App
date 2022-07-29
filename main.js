@@ -18,10 +18,11 @@ const weather = {
         const { speed } = data.wind;
 
         // Display results of specific data in App
+        console.log(name, icon, description, all, temp, humidity, speed);
         document.querySelector(".city").innerText = "Weather in " + name;
-        document.querySelector(".temp").innerText = temp + "℃";
+        document.querySelector(".temp").innerText = "Temp: " + temp + "℃";
         document.querySelector(".description").innerText = description;
-        document.querySelector(".icon").src = "https://openweathermap.org/img/wn/" + icon + ".png";
+        document.querySelector(".icon").src = "http://openweathermap.org/img/wn/" + icon + ".png";
         document.querySelector(".cloudy").innerText = all + "%";
         document.querySelector(".humidity").innerText = humidity + "%";
         document.querySelector(".wind").innerText = speed + "m/s";

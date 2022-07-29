@@ -7,6 +7,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="./styles/style.css">
+        <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
         <title>Weather App</title>
     </head>
 
@@ -18,11 +19,13 @@
 
                 <h3>The Weather App</h3>
 
-                <div class="display__screen">
+                <div class="display__screen" style="text-transform: capitalize;">
                     <div class="city"></div>
+                    <div class="box">
+                        <img class="icon" src="" alt="">
+                        <div class="description"></div>
+                    </div>
                     <div class="temp"></div>
-                    <div class="icon"></div>
-                    <div class="description"></div>
                 </div>
 
             </section>
@@ -31,7 +34,7 @@
 
                 <div class="search">
 
-                    <input type="text" id="search" placeholder="Location">
+                    <input type="text" id="search" placeholder="Enter Your Location">
 
                     <button>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">

@@ -23,15 +23,24 @@ body {
 }
 
 #display {
-    background-image: url(../images/weather1.png);
+    background-image: url(../images/weather.png);
     background-repeat: no-repeat;
+    object-fit: cover;
     height: 50vh;
     @include flexCenter(column);
     justify-content: space-between;
     padding: 50px;
 
     div {
-        margin: 10px;
+        margin: 3px;
+    }
+    
+    .box {
+        @include flexCenter(row);
+
+        img {
+            width: 3rem;
+        }
     }
 }
 
