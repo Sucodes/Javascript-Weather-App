@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&display=swap');
 @import "_mixins.scss";
 @import "_variables.scss";
 
@@ -10,9 +10,9 @@
 }
 
 body {
+    font-family: 'Cormorant Garamond', serif;
     margin: 30px;
     @include flexCenter(row);
-    font-family: 'Playfair Display', serif;
     font-size: $fontSize;
     color: $white;
 }
@@ -27,6 +27,7 @@ body {
     object-fit: cover;
     height: 50vh;
     @include flexCenter(column);
+    align-items: flex-start;
     justify-content: space-between;
     padding: 50px;
 
@@ -36,9 +37,10 @@ body {
     
     .box {
         @include flexCenter(row);
+        justify-content: flex-start;
 
         img {
-            width: 3rem;
+            width: 2.5rem;
         }
     }
 }
@@ -48,26 +50,26 @@ body {
     @include flexCenter(column);
     justify-content: space-evenly;
     height: 50vh;
-    padding: 15px;
+    padding-left: 15px;
+    width: 100%;
     
     .search {
         width: 100%;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
         @include flexCenter(row);
         justify-content: space-between;
 
         input {
-            width: 80%;
-            height: 50px;
+            width: 70%;
+            height: 35px;
             border: none;
-            color: $white;
             background: $transparentColor;
             border-bottom: 1px solid $grey;
 
             &:hover {
                 border: none;
                 border-radius: 5px;
-                color: $grey;
+                color: #000;
                 background-color: $white;
                 transition: 1s;
                 transform: scale(1);
@@ -75,15 +77,14 @@ body {
 
             &::placeholder {
                 color: $grey;
-                font-size: $fontSize;
+                font-size: 0.55rem;
             }
         }
 
         button {
-            height: 50px;
-            width: 20%;
+            height: 35px;
+            width: 15%;
             border: none;
-            border-radius: 5px;
             background-color: orange;
             cursor: pointer;
 
@@ -97,31 +98,47 @@ body {
             }
 
             svg {
-                width: 20px;
+                width: 13px;
             }
         }
     }
 
-    hr {
+    div {
+        width: 100%;
+
+       .locations {
+        @include flexCenter(column);
+        align-items: flex-start;
+
+            ul, li {
+                justify-content: flex-start;
+                cursor: pointer;
+                list-style-type: none;
+                color: $grey;
+                padding: 5px 0px;
+            }
+        } 
+    }
+    
+
+    div > hr {
         width: 85%;
-        margin: 0px 20px;
+        border-bottom: $grey;
+        padding-right: 15px;
     }
 
     .weather-details {
         width: 100%;
-        margin-top: 20px;
+        padding-right: 15px;
+        margin-top: 5px;
 
-        h4 {
-            text-align: center;
-        }
-        
         .details {
             @include flexCenter(row);
             justify-content: space-between;
-            margin: 10px 5px;
+            margin: 5px 0px;
             
             ul li {
-                margin: 15px 0px;
+                padding: 5px 0px;
                 list-style: none;
             }
         }
@@ -133,26 +150,81 @@ body {
 @media (min-width: 660px) {
     .container {
         @include flexCenter(row);
+        font-size: 0.7rem;
+        width: 80vw;
     }
 
     #display {
-        width: 40vw;
+        width: 50%;
         height: 80vh;
+
+        .display__screen {
+            margin: 0px;
+            height: 8%;
+            @include flexCenter(row);
+
+            .box {
+                height: 100%;
+                @include flexCenter(column);
+
+                img {
+                    width: 2rem;
+                }
+            }
+        }
     }
 
     #input {
         @include flexCenter(column);
         justify-content: space-between;
-        padding: 10px;
-        width: 20vw;
+        padding-left: 25px;
+        width: 30%;
         height: 80vh;
 
+        .search {
+            margin-bottom: 0px;
+
+            input {
+                width: 60%;
+                height: 40px;
+            }
+
+            button {
+                height: 40px;
+                width: 30%;
+            }
+        }
+
+        hr {
+            margin: 30px 0px;
+        }
+
+        .options {
+            height: 25%;
+
+           .locations {
+            height: 100%;
+            @include flexCenter(column);
+            justify-content: space-between;
+            align-items: flex-start;
+            margin: 5px 0px;
+            } 
+        }
+
         .weather-details {
+            height: 25%;
 
             .details {
+                height: 100%;
                 
-                ul > li {
-                    margin-top: 3rem;
+                ul {
+                    @include flexCenter(column);
+                    justify-content: space-between;
+                    align-items: flex-start;
+
+                    li {
+                        margin: 5px 0px;
+                    }
                 }
             }
         }

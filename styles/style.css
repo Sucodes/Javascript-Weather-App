@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap"); /******************************************* All mixins used are stored here *****************************/ /****************** All variables are stored here *************************/
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&display=swap"); /******************************************* All mixins used are stored here *****************************/ /****************** All variables are stored here *************************/
 * {
   margin: 0;
   padding: 0;
@@ -6,13 +6,13 @@
 }
 
 body {
+  font-family: "Cormorant Garamond", serif;
   margin: 30px;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  font-family: "Playfair Display", serif;
-  font-size: 1rem;
+  font-size: 0.6rem;
   color: #fff;
 }
 
@@ -30,6 +30,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   padding: 50px;
 }
@@ -41,9 +42,10 @@ body {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  justify-content: flex-start;
 }
 #display .box img {
-  width: 3rem;
+  width: 2.5rem;
 }
 
 #input {
@@ -55,11 +57,12 @@ body {
   align-items: center;
   justify-content: space-evenly;
   height: 50vh;
-  padding: 15px;
+  padding-left: 15px;
+  width: 100%;
 }
 #input .search {
   width: 100%;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -67,38 +70,36 @@ body {
   justify-content: space-between;
 }
 #input .search input {
-  width: 80%;
-  height: 50px;
+  width: 70%;
+  height: 35px;
   border: none;
-  color: #fff;
   background: transparent;
   border-bottom: 1px solid rgb(182, 182, 182);
 }
 #input .search input:hover {
   border: none;
   border-radius: 5px;
-  color: rgb(182, 182, 182);
+  color: #000;
   background-color: #fff;
   transition: 1s;
   transform: scale(1);
 }
 #input .search input::-moz-placeholder {
   color: rgb(182, 182, 182);
-  font-size: 1rem;
+  font-size: 0.55rem;
 }
 #input .search input:-ms-input-placeholder {
   color: rgb(182, 182, 182);
-  font-size: 1rem;
+  font-size: 0.55rem;
 }
 #input .search input::placeholder {
   color: rgb(182, 182, 182);
-  font-size: 1rem;
+  font-size: 0.55rem;
 }
 #input .search button {
-  height: 50px;
-  width: 20%;
+  height: 35px;
+  width: 15%;
   border: none;
-  border-radius: 5px;
   background-color: orange;
   cursor: pointer;
 }
@@ -110,18 +111,34 @@ body {
   transition: 0.8s;
 }
 #input .search button svg {
-  width: 20px;
+  width: 13px;
 }
-#input hr {
+#input div {
+  width: 100%;
+}
+#input div .locations {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-items: flex-start;
+}
+#input div .locations ul, #input div .locations li {
+  justify-content: flex-start;
+  cursor: pointer;
+  list-style-type: none;
+  color: rgb(182, 182, 182);
+  padding: 5px 0px;
+}
+#input div > hr {
   width: 85%;
-  margin: 0px 20px;
+  border-bottom: rgb(182, 182, 182);
+  padding-right: 15px;
 }
 #input .weather-details {
   width: 100%;
-  margin-top: 20px;
-}
-#input .weather-details h4 {
-  text-align: center;
+  padding-right: 15px;
+  margin-top: 5px;
 }
 #input .weather-details .details {
   display: flex;
@@ -129,10 +146,10 @@ body {
   justify-content: center;
   align-items: center;
   justify-content: space-between;
-  margin: 10px 5px;
+  margin: 5px 0px;
 }
 #input .weather-details .details ul li {
-  margin: 15px 0px;
+  padding: 5px 0px;
   list-style: none;
 }
 
@@ -143,10 +160,30 @@ body {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    font-size: 0.7rem;
+    width: 80vw;
   }
   #display {
-    width: 40vw;
+    width: 50%;
     height: 80vh;
+  }
+  #display .display__screen {
+    margin: 0px;
+    height: 8%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  #display .display__screen .box {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #display .display__screen .box img {
+    width: 2rem;
   }
   #input {
     display: flex;
@@ -154,12 +191,53 @@ body {
     justify-content: center;
     align-items: center;
     justify-content: space-between;
-    padding: 10px;
-    width: 20vw;
+    padding-left: 25px;
+    width: 30%;
     height: 80vh;
   }
-  #input .weather-details .details ul > li {
-    margin-top: 3rem;
+  #input .search {
+    margin-bottom: 0px;
+  }
+  #input .search input {
+    width: 60%;
+    height: 40px;
+  }
+  #input .search button {
+    height: 40px;
+    width: 30%;
+  }
+  #input hr {
+    margin: 30px 0px;
+  }
+  #input .options {
+    height: 25%;
+  }
+  #input .options .locations {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 5px 0px;
+  }
+  #input .weather-details {
+    height: 25%;
+  }
+  #input .weather-details .details {
+    height: 100%;
+  }
+  #input .weather-details .details ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  #input .weather-details .details ul li {
+    margin: 5px 0px;
   }
 }
 /******************** Media Query styling ends here ***********************************//*# sourceMappingURL=style.css.map */
