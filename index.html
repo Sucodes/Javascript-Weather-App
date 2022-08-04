@@ -17,75 +17,75 @@
 
             <section id="display" style="background-image: url(./images/weather.png);">
 
-                <p>The.Weather.App</p>
+                <div class="card">
+                    <p>The.Weather.App</p>
 
-                <div class="display__screen" style="text-transform: capitalize;">
-                    <div class="temp" style="font-size: 2rem;"></div>
-                    <div class="box">
-                        <div class="city" style="font-size: 1.1rem;"></div>
-                        <div class="date"></div>
+                    <div class="display__screen" style="text-transform: capitalize;">
+
+                        <div class="temp" style="font-size: 2rem;"></div>
+                        <div class="box">
+                            <div class="city" style="font-size: 1.1rem;"></div>
+                            <div class="date"></div>
+                        </div>
+                        <div class="box">
+                            <img class="icon" src="" alt="">
+                            <div class="description"></div>
+                        </div>
+                        
                     </div>
-                    <div class="box">
-                        <img class="icon" src="" alt="">
-                        <div class="description"></div>
+                </div>
+
+                <aside id="input">
+
+                    <div class="search">
+
+                        <input type="text" id="search" placeholder="Another Location">
+
+                        <button onclick="date()">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                <path d="M500.3 443.7l-119.7-119.7c27.22-40.41 40.65-90.9 33.46-144.7C401.8 87.79 326.8 13.32 235.2 1.723C99.01-15.51-15.51 99.01 1.724 235.2c11.6 91.64 86.08 166.7 177.6 178.9c53.8 7.189 104.3-6.236 144.7-33.46l119.7 119.7c15.62 15.62 40.95 15.62 56.57 0C515.9 484.7 515.9 459.3 500.3 443.7zM79.1 208c0-70.58 57.42-128 128-128s128 57.42 128 128c0 70.58-57.42 128-128 128S79.1 278.6 79.1 208z"/>
+                            </svg>
+                        </button>
+
                     </div>
-                    
-                </div>
 
-            </section>
-
-            <section id="input">
-
-                <div class="search">
-
-                    <input type="text" id="search" placeholder="Another Location">
-
-                    <button onclick="date()">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                            <path d="M500.3 443.7l-119.7-119.7c27.22-40.41 40.65-90.9 33.46-144.7C401.8 87.79 326.8 13.32 235.2 1.723C99.01-15.51-15.51 99.01 1.724 235.2c11.6 91.64 86.08 166.7 177.6 178.9c53.8 7.189 104.3-6.236 144.7-33.46l119.7 119.7c15.62 15.62 40.95 15.62 56.57 0C515.9 484.7 515.9 459.3 500.3 443.7zM79.1 208c0-70.58 57.42-128 128-128s128 57.42 128 128c0 70.58-57.42 128-128 128S79.1 278.6 79.1 208z"/>
-                        </svg>
-                    </button>
-
-                </div>
-
-                <div class="options">
-                    <ul class="locations">
-                        <li class="location1" onclick="place1(), date()">Birmingham</li>
-                        <li class="location2" onclick="place2(), date()">Manchester</li>
-                        <li class="location3" onclick="place3(), date()">New York</li>
-                        <li class="location4" onclick="place4(), date()">California</li>
-                    </ul>
-                </div>
-
-                <div>
-                    <hr>
-                </div>
-
-                <div class="weather-details">
-
-                    <p>Weather Details</p>
-
-                    <div class="details">
-
-                        <ul style="color: rgb(182, 182, 182);">
-                            <li> Cloudy </li>
-                            <li> Humidity </li>
-                            <li> Wind </li>
+                    <div class="options">
+                        <ul class="locations">
+                            <li class="location1" onclick="place1(), date()">Birmingham</li>
+                            <li class="location2" onclick="place2(), date()">Manchester</li>
+                            <li class="location3" onclick="place3(), date()">New York</li>
+                            <li class="location4" onclick="place4(), date()">California</li>
                         </ul>
+                    </div>
 
-                        <ul>
-                            <li class="cloudy"></li>
-                            <li class="humidity"></li>
-                            <li class="wind"></li>
-                        </ul>
+
+                    <div class="weather-details">
+
+                        <hr>
+
+                        <p>Weather Details</p>
+
+                        <div class="details">
+
+                            <ul style="color: rgb(182, 182, 182);">
+                                <li> Cloudy </li>
+                                <li> Humidity </li>
+                                <li> Wind </li>
+                            </ul>
+
+                            <ul>
+                                <li class="cloudy"></li>
+                                <li class="humidity"></li>
+                                <li class="wind"></li>
+                            </ul>
+
+                        </div>
+
+                        <hr>
 
                     </div>
 
-                </div>
-
-                <div>
-                    <hr>
-                </div>
+                </aside>
 
             </section>
 

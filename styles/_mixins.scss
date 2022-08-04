@@ -8,6 +8,9 @@
 }
 
 @mixin background {
-    background: rgb(2,0,36);
-    background: linear-gradient(120deg, rgba(2,0,36,1) 0%, rgba(153,72,2,1) 100%, rgba(0,212,255,1) 100%);
+    background: rgba(110, 110, 110, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    background-repeat: no-repeat;
 }

@@ -22,9 +22,14 @@ body {
 }
 
 #display {
-  background-repeat: no-repeat;
   -o-object-fit: cover;
      object-fit: cover;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+
+.card {
   height: 50vh;
   display: flex;
   flex-direction: column;
@@ -32,33 +37,44 @@ body {
   align-items: center;
   align-items: flex-start;
   justify-content: space-between;
-  padding: 50px;
+  padding: 20px;
 }
-#display div {
+.card div {
   margin: 3px;
 }
-#display .box {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  justify-content: flex-start;
-}
-#display .box img {
-  width: 2.5rem;
-}
-
-#input {
-  background: rgb(2, 0, 36);
-  background: linear-gradient(120deg, rgb(2, 0, 36) 0%, rgb(153, 72, 2) 100%, rgb(0, 212, 255) 100%);
+.card .display__screen {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  justify-content: space-evenly;
-  height: 50vh;
-  padding-left: 15px;
+  align-items: flex-start;
+}
+.card .display__screen .box {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-items: flex-start;
+}
+.card .display__screen .box img {
+  width: 2.5rem;
+}
+
+#input {
+  background: rgba(110, 110, 110, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  height: 50vh;
+  padding-left: 5px;
 }
 #input .search {
   width: 100%;
@@ -71,7 +87,7 @@ body {
 }
 #input .search input {
   width: 70%;
-  height: 35px;
+  height: 45px;
   border: none;
   background: transparent;
   border-bottom: 1px solid rgb(182, 182, 182);
@@ -87,17 +103,20 @@ body {
 #input .search input::-moz-placeholder {
   color: rgb(182, 182, 182);
   font-size: 0.55rem;
+  font-family: "Cormorant Garamond", serif;
 }
 #input .search input:-ms-input-placeholder {
   color: rgb(182, 182, 182);
   font-size: 0.55rem;
+  font-family: "Cormorant Garamond", serif;
 }
 #input .search input::placeholder {
   color: rgb(182, 182, 182);
   font-size: 0.55rem;
+  font-family: "Cormorant Garamond", serif;
 }
 #input .search button {
-  height: 35px;
+  height: 45px;
   width: 15%;
   border: none;
   background-color: orange;
@@ -130,17 +149,28 @@ body {
   color: rgb(182, 182, 182);
   padding: 5px 0px;
 }
-#input div > hr {
+#input .weather-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-around;
+  align-items: flex-start;
+  height: 50%;
+  width: 100%;
+  padding-right: 15px;
+  padding-bottom: 10px;
+}
+#input .weather-details hr {
   width: 85%;
   border-bottom: rgb(182, 182, 182);
   padding-right: 15px;
 }
-#input .weather-details {
-  width: 100%;
-  padding-right: 15px;
+#input .weather-details p {
   margin-top: 5px;
 }
 #input .weather-details .details {
+  height: 40%;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -156,88 +186,79 @@ body {
 /******************** Media Query styling begins here ***********************************/
 @media (min-width: 660px) {
   .container {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
     font-size: 0.7rem;
-    width: 80vw;
+    width: 50.19%;
   }
   #display {
-    width: 50%;
+    position: relative;
+    background-repeat: no-repeat;
+    border-radius: 0px;
     height: 80vh;
-  }
-  #display .display__screen {
-    margin: 0px;
-    height: 8%;
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    align-items: center;
-  }
-  #display .display__screen .box {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  #display .display__screen .box img {
-    width: 2rem;
-  }
-  #input {
-    display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     justify-content: space-between;
-    padding-left: 25px;
-    width: 30%;
-    height: 80vh;
   }
-  #input .search {
-    margin-bottom: 0px;
+  #input {
+    position: absolute;
+    right: 0px;
+    width: 35%;
+    height: 100.3%;
   }
   #input .search input {
     width: 60%;
-    height: 40px;
   }
   #input .search button {
-    height: 40px;
     width: 30%;
   }
-  #input hr {
-    margin: 30px 0px;
-  }
   #input .options {
+    padding-left: 20px;
     height: 25%;
   }
-  #input .options .locations {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    justify-content: space-between;
-    align-items: flex-start;
+  #input .options li {
     margin: 5px 0px;
   }
   #input .weather-details {
-    height: 25%;
+    padding-left: 20px;
+    height: 55%;
   }
-  #input .weather-details .details {
-    height: 100%;
+  #input .weather-details hr {
+    margin: 10px 0px;
   }
   #input .weather-details .details ul {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    justify-content: space-between;
     align-items: flex-start;
   }
   #input .weather-details .details ul li {
     margin: 5px 0px;
+  }
+}
+@media (min-width: 890px) {
+  .card {
+    padding: 5px 15px;
+  }
+  .card .display__screen {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .card .display__screen .box {
+    width: 138px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  .card .display__screen .box img {
+    width: 1.8rem;
   }
 }
 /******************** Media Query styling ends here ***********************************//*# sourceMappingURL=style.css.map */

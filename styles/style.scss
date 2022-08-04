@@ -23,35 +23,45 @@ body {
 }
 
 #display {
-    background-repeat: no-repeat;
     object-fit: cover;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+
+.card {
     height: 50vh;
     @include flexCenter(column);
     align-items: flex-start;
     justify-content: space-between;
-    padding: 50px;
+    padding: 20px;
 
     div {
         margin: 3px;
     }
-    
-    .box {
-        @include flexCenter(row);
-        justify-content: flex-start;
 
-        img {
-            width: 2.5rem;
-        }
-    }
+    .display__screen {
+        @include flexCenter(column);
+        align-items: flex-start;
+
+       .box {
+            width: 100%;
+            @include flexCenter(column);
+            align-items: flex-start;
+
+            img {
+                width: 2.5rem;
+            }
+        } 
+    }   
 }
 
 #input {
     @include background;
     @include flexCenter(column);
-    justify-content: space-evenly;
+    justify-content: space-between;
     height: 50vh;
-    padding-left: 15px;
-    width: 100%;
+    padding-left: 5px;
     
     .search {
         width: 100%;
@@ -61,7 +71,7 @@ body {
 
         input {
             width: 70%;
-            height: 35px;
+            height: 45px;
             border: none;
             background: $transparentColor;
             border-bottom: 1px solid $grey;
@@ -78,11 +88,12 @@ body {
             &::placeholder {
                 color: $grey;
                 font-size: 0.55rem;
+                font-family: 'Cormorant Garamond', serif;
             }
         }
 
         button {
-            height: 35px;
+            height: 45px;
             width: 15%;
             border: none;
             background-color: orange;
@@ -119,20 +130,28 @@ body {
             }
         } 
     }
-    
-
-    div > hr {
-        width: 85%;
-        border-bottom: $grey;
-        padding-right: 15px;
-    }
 
     .weather-details {
+        @include flexCenter(column);
+        justify-content: space-around;
+        align-items: flex-start;
+        height: 50%;
         width: 100%;
         padding-right: 15px;
-        margin-top: 5px;
+        padding-bottom: 10px;
+
+        hr {
+            width: 85%;
+            border-bottom: $grey;
+            padding-right: 15px;
+        }
+
+        p {
+            margin-top: 5px;
+        }
 
         .details {
+            height: 40%;
             @include flexCenter(row);
             justify-content: space-between;
             margin: 5px 0px;
@@ -149,82 +168,84 @@ body {
 
 @media (min-width: 660px) {
     .container {
-        @include flexCenter(row);
         font-size: 0.7rem;
-        width: 80vw;
+        width: 50.19%;
     }
 
     #display {
-        width: 50%;
+        position: relative;
+        background-repeat: no-repeat;
+        border-radius: 0px;
         height: 80vh;
-
-        .display__screen {
-            margin: 0px;
-            height: 8%;
-            @include flexCenter(row);
-
-            .box {
-                height: 100%;
-                @include flexCenter(column);
-
-                img {
-                    width: 2rem;
-                }
-            }
-        }
+        @include flexCenter(row);
+        justify-content: space-between;
     }
 
     #input {
-        @include flexCenter(column);
-        justify-content: space-between;
-        padding-left: 25px;
-        width: 30%;
-        height: 80vh;
+        position: absolute;
+        right: 0px;
+        width: 35%;
+        height: 100.3%;
 
         .search {
-            margin-bottom: 0px;
 
             input {
                 width: 60%;
-                height: 40px;
             }
 
             button {
-                height: 40px;
                 width: 30%;
             }
         }
 
-        hr {
-            margin: 30px 0px;
-        }
-
         .options {
+            padding-left: 20px;
             height: 25%;
 
-           .locations {
-            height: 100%;
-            @include flexCenter(column);
-            justify-content: space-between;
-            align-items: flex-start;
-            margin: 5px 0px;
-            } 
+            li {
+                margin: 5px 0px;
+            }
         }
 
         .weather-details {
-            height: 25%;
+            padding-left: 20px;
+            height: 55%;
+
+            hr {
+                margin: 10px 0px;
+            }
 
             .details {
-                height: 100%;
                 
                 ul {
                     @include flexCenter(column);
-                    justify-content: space-between;
                     align-items: flex-start;
 
                     li {
                         margin: 5px 0px;
                     }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 890px) {
+    .card {
+        padding: 5px 15px;
+
+        .display__screen {
+            @include flexCenter(row);
+            justify-content: space-between;
+
+            .box {
+                width: 138px;
+                @include flexCenter(column);
+                align-items: flex-start;
+                justify-content: flex-start;
+
+                img {
+                    width: 1.8rem;
                 }
             }
         }

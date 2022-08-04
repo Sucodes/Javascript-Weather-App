@@ -35,33 +35,14 @@ let weather = {
     
 };
 
+
 // Listen to button click event and pass input content to search function
+
 document.querySelector("button").addEventListener("click", function(){
         weather.search();
     }
 );
 
-// Get user's location immediately via prompt and display it
-
-function answer() {
-    // console.log(promptField);
-    let promptField = prompt("Enter your location", '');
-
-    if (promptField != null){
-        alert("Click OK to view the weather in " + promptField);
-        weather.fetchWeather(promptField);
-        date();
-    } else {
-        let newPrompt = prompt("You have to provide an input", '');
-        alert("Click OK to view the weather in " + newPrompt);
-        weather.fetchWeather(newPrompt);
-        date();
-    }
-};
-
-answer();
-
-// Search for weather update from locations provided
 
 function place1() {
     let specificPlace1 = document.querySelector(".location1").innerText;
@@ -91,9 +72,41 @@ function place4(){
 // Function to get the current date 
 
 function date (){
-    const current = new Date().toLocaleString("en-UK", {timeZone: 'GMT'});
-    console.log(current);
-
-    document.querySelector(".date").innerText = current;
+    const event = new Date();
+    const options = { weekday: 'long', year: 'numeric', month: 'short', day: 'numeric' };
+    const time = event.getHours() + " " + ":" + " " + event.getMinutes();
+    const date = time + " " + "-" + " " + event.toLocaleString(undefined, options);
+    document.querySelector(".date").innerText = date;
     weather.fetchWeather(document.querySelector(".date").innerText);
 };
+
+
+// Get user's location immediately on access and display it
+
+const findMyCity = () => {
+    const status = document.querySelector('.city');
+
+    const success = (position) => {
+        console.log(position);
+        const latitude = position.coords.latitude;
+        const longitude = position.coords.longitude;
+
+        const geoApiurl = "https://api.bigdatacloud.net/data/reverse-geocode-client?" + latitude + "=XXXXXXXXXXXX&" + longitude + "=XXXXXXXXXXXX&localityLanguage=en";
+
+        fetch(geoApiurl)
+        .then(response => response.json())
+        .then(data => {
+            let cityName = data.principalSubdivision;
+            weather.fetchWeather(cityName);
+            date();
+        })
+    }
+
+    const error = () => {
+        status.textContent = 'Unable to retrieve your location';
+    }
+
+    navigator.geolocation.getCurrentPosition(success, error);
+}
+
+findMyCity();
