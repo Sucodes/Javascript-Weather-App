@@ -127,6 +127,13 @@ body {
                 list-style-type: none;
                 color: $grey;
                 padding: 5px 0px;
+
+                &:hover {
+                    text-decoration: underline;
+                    color: $white;
+                    transition: 1s;
+                    transform: scale(1.3);
+                }
             }
         } 
     }

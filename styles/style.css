@@ -149,6 +149,12 @@ body {
   color: rgb(182, 182, 182);
   padding: 5px 0px;
 }
+#input div .locations ul:hover, #input div .locations li:hover {
+  text-decoration: underline;
+  color: #fff;
+  transition: 1s;
+  transform: scale(1.3);
+}
 #input .weather-details {
   display: flex;
   flex-direction: column;
