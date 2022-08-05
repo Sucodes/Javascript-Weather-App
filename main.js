@@ -32,7 +32,6 @@ let weather = {
     search: function() {
         this.fetchWeather(document.querySelector("#search").value); // pass city name contained in input text field to the fetchWeather function
     },
-    
 };
 
 
@@ -56,13 +55,13 @@ function place2() {
     weather.fetchWeather(specificPlace2);
 };
 
-function place3(){
+function place3() {
     let specificPlace3 = document.querySelector(".location3").innerText;
     // console.log(specificPlace3);
     weather.fetchWeather(specificPlace3);
 };
 
-function place4(){
+function place4() {
     let specificPlace4 = document.querySelector(".location4").innerText;
     // console.log(specificPlace4);
     weather.fetchWeather(specificPlace4);
@@ -110,3 +109,17 @@ const findMyCity = () => {
 }
 
 findMyCity();
+
+
+// function backgroundImage() {
+//     const image = document.querySelector("#display__image");
+//     image.src = '/images/weather.png';
+    
+//     // if (description == "rain") {
+//     //     image = "images/rain.avif";
+//     // }
+//     // else {
+//     //     document.querySelector("#display").style.backgroundImage = "url('https://source.unsplash.com/1600x900/?" + description + "')";
+//     // }  
+// }
+//  backgroundImage();

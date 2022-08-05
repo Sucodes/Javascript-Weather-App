@@ -57,6 +57,7 @@ body {
 }
 
 #input {
+    font-size: $fontSize;
     @include background;
     @include flexCenter(column);
     justify-content: space-between;
@@ -87,7 +88,7 @@ body {
 
             &::placeholder {
                 color: $grey;
-                font-size: 0.55rem;
+                font-size: 0.8rem;
                 font-family: 'Cormorant Garamond', serif;
             }
         }
@@ -246,10 +247,11 @@ body {
             justify-content: space-between;
 
             .box {
-                width: 138px;
+                width: 124px;
                 @include flexCenter(column);
                 align-items: flex-start;
                 justify-content: flex-start;
+                margin: 0px;
 
                 img {
                     width: 1.8rem;
