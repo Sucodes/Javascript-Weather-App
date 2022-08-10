@@ -26,7 +26,20 @@ let weather = {
         document.querySelector(".cloudy").innerText = all + "%";
         document.querySelector(".humidity").innerText = humidity + "%";
         document.querySelector(".wind").innerText = speed + "m/s";
-        document.querySelector("#display").style.backgroundImage = "url('https://source.unsplash.com/1600x900/?" + description + "')";
+        // document.querySelector("#display").style.backgroundImage = "url('https://source.unsplash.com/1600x900/?" + description + "')";
+
+        // Interchange background image locally using description
+        const image = ["clear sky", "few clouds", "light rain", "scattered clouds", "broken clouds", "cloudy", "overcast clouds", "moderate rain"];
+        if (description === image[0] || description === image[1])
+            document.querySelector("#display").style.backgroundImage = "url(./images/fewclouds.avif)";
+        else if (description === image[2] || description === image[7])
+            document.querySelector("#display").style.backgroundImage = "url(./images/rain.avif)";
+        else if (description === image[3] || description === image[4])
+            document.querySelector("#display").style.backgroundImage = "url(./images/broken.avif)";
+        else if (description === image[5] || description === image[6])
+            document.querySelector("#display").style.backgroundImage = "url(./images/overcast.avif)";
+        else 
+            document.querySelector("#display").style.backgroundImage = "url(./images/weather.png)";
     },
 
     search: function() {
@@ -34,13 +47,19 @@ let weather = {
     },
 };
 
-
 // Listen to button click event and pass input content to search function
 
 document.querySelector("button").addEventListener("click", function(){
-        weather.search();
+    weather.search();
     }
 );
+
+
+// function place(location){
+//     let specificPlace = document.querySelector(`.${location}`).innerText;
+//     console.log(specificPlace);
+//     weather.fetchWeather(specificPlace);
+// }
 
 
 function place1() {
@@ -109,17 +128,3 @@ const findMyCity = () => {
 }
 
 findMyCity();
-
-
-// function backgroundImage() {
-//     const image = document.querySelector("#display__image");
-//     image.src = '/images/weather.png';
-    
-//     // if (description == "rain") {
-//     //     image = "images/rain.avif";
-//     // }
-//     // else {
-//     //     document.querySelector("#display").style.backgroundImage = "url('https://source.unsplash.com/1600x900/?" + description + "')";
-//     // }  
-// }
-//  backgroundImage();
