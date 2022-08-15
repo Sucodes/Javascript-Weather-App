@@ -147,12 +147,12 @@ body {
   justify-content: flex-start;
   cursor: pointer;
   list-style-type: none;
-  color: rgb(182, 182, 182);
+  color: #fff;
   padding: 5px 0px;
 }
 #input div .locations ul:hover, #input div .locations li:hover {
   text-decoration: underline;
-  color: #fff;
+  color: rgb(182, 182, 182);
   transition: 1s;
   transform: scale(1.3);
 }

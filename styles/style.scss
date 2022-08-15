@@ -126,12 +126,12 @@ body {
                 justify-content: flex-start;
                 cursor: pointer;
                 list-style-type: none;
-                color: $grey;
+                color: $white;
                 padding: 5px 0px;
 
                 &:hover {
                     text-decoration: underline;
-                    color: $white;
+                    color: $grey;
                     transition: 1s;
                     transform: scale(1.3);
                 }
